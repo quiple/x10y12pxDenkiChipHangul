@@ -8,9 +8,25 @@
 <prop id="lineGap" value="0"/>
 <prop id="xHeight" value="8"/>
 <prop id="capHeight" value="10"/>
-<name id="0" value="Copyright 2026 The x8y12pxDenkiChip Project Authors (https://github.com/hicchicc/x8y12pxDenkiChip)"/>
-<name id="1" value="x8y12pxDenkiChip"/>
-<name id="2" value="Book"/>
+<name id="0" value="Copyright (c) 2026 The x8y12pxDenkiChip Project Authors; Copyright (c) 2026 quiple"/>
+<name id="1" value="x8y12pxDenkiChipHangul"/>
+<name id="2" value="Regular"/>
+<name id="3" value="x8y12pxDenkiChipHangul"/>
+<name id="4" value="x8y12pxDenkiChipHangul"/>
+<name id="5" value="2026-06-15"/>
+<name id="6" value="x8y12pxDenkiChipHangul"/>
+<name id="8" value="The x8y12pxDenkiChip Project Authors; quiple"/>
+<name id="9" value="The x8y12pxDenkiChip Project Authors; quiple"/>
+<name id="11" value="https://github.com/hicchicc/x8y12pxDenkiChip; https://quiple.dev"/>
+<name id="12" value="https://github.com/hicchicc/x8y12pxDenkiChip; https://quiple.dev"/>
+<name id="13" value="This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org"/>
+<name id="14" value="https://openfontlicense.org"/>
+<name id="16" value="x8y12pxDenkiChipHangul"/>
+<name id="17" value="Regular"/>
+<name id="18" value="x8y12pxDenkiChipHangul"/>
+<name id="20" value="x8y12pxDenkiChipHangul"/>
+<name id="21" value="x8y12pxDenkiChipHangul"/>
+<name id="22" value="Regular"/>
 <g u="32" x="0" y="0" w="4" d="AAA"/>
 <g u="33" x="0" y="10" w="3" d="CgJOAkQ"/>
 <g u="34" x="0" y="10" w="4" d="AwPC/wBCAULCAP8"/>
