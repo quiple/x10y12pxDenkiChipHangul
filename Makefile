@@ -3,11 +3,11 @@ JAR_URL = https://github.com/kreativekorp/bitsnpicas/releases/latest/download/Bi
 TOOLS_DIR = tools
 FONTS_DIR = fonts
 JAR_FILE = $(TOOLS_DIR)/BitsNPicas.jar
-SRC_FILE = src/x8y12pxDenkiChipHangul.kbitx
+SRC_FILE = src/x10y12pxDenkiChipHangul.kbitx
 
-TTF_FILE = $(FONTS_DIR)/x8y12pxDenkiChipHangul.ttf
-BDF_FILE = $(FONTS_DIR)/x8y12pxDenkiChipHangul.bdf
-WOFF2_FILE = $(FONTS_DIR)/x8y12pxDenkiChipHangul.woff2
+TTF_FILE = $(FONTS_DIR)/x10y12pxDenkiChipHangul.ttf
+BDF_FILE = $(FONTS_DIR)/x10y12pxDenkiChipHangul.bdf
+WOFF2_FILE = $(FONTS_DIR)/x10y12pxDenkiChipHangul.woff2
 
 FONTTOOLS = python3 -m fontTools.ttLib.woff2
 

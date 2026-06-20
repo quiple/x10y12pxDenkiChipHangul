@@ -1,9 +1,9 @@
 STARTFONT 2.1
-FONT -The x8y12pxDenkiChip Project Authors; quiple-x8y12pxDenkiChipHangul-Regular-R-Regular--12-12-75-75-c-80-iso10646-1
+FONT -The x8y12pxDenkiChip Project Authors; quiple-x10y12pxDenkiChipHangul-Regular-R-Regular--12-12-75-75-c-80-iso10646-1
 SIZE 12 75 75
 FONTBOUNDINGBOX 16 12 -5 -1
 STARTPROPERTIES 10
-FAMILY_NAME "x8y12pxDenkiChipHangul"
+FAMILY_NAME "x10y12pxDenkiChipHangul"
 WEIGHT_NAME "Regular"
 FONT_VERSION "2026-06-21"
 COPYRIGHT "Copyright (c) 2026 The x8y12pxDenkiChip Project Authors; Copyright (c) 2026 quiple"
