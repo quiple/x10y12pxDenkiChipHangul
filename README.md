@@ -1,7 +1,5 @@
 # x8y12pxDenkiChipHangul 「전기칩 한글」
 
-![DenkiChipHangul](./doc/x8y12pxDenkiChipHangul.png)
-
 [데모](https://blog.quiple.dev/font/denkichip-hangul)
 
 **x8y12pxDenkiChipHangul(전기칩 한글)**은 12px 크기의 일본어 픽셀 폰트 '**[x8y12pxDenkiChip(マルミーニャ)](https://github.com/hicchicc/x8y12pxDenkiChip)**'를 기반으로 하는 한국어&middot;일본어 픽셀 폰트입니다.
