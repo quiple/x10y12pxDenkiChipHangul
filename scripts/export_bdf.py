@@ -21,12 +21,20 @@ def main():
         )
 
     output_path = os.path.abspath(sys.argv[1])
+    temporary_path = output_path + ".tmp.bdf"
     exporter = plugin_class.alloc().init()
-    success, error = exporter.export(Glyphs.fonts[0], output_path)
-    if not success:
-        raise RuntimeError(error or "BDF export failed")
-    if not os.path.isfile(output_path) or os.path.getsize(output_path) == 0:
-        raise RuntimeError("BDF plug-in did not produce an output file")
+    try:
+        if os.path.exists(temporary_path):
+            os.remove(temporary_path)
+        success, error = exporter.export(Glyphs.fonts[0], temporary_path)
+        if not success:
+            raise RuntimeError(error or "BDF export failed")
+        if not os.path.isfile(temporary_path) or os.path.getsize(temporary_path) == 0:
+            raise RuntimeError("BDF plug-in did not produce an output file")
+        os.replace(temporary_path, output_path)
+    finally:
+        if os.path.exists(temporary_path):
+            os.remove(temporary_path)
 
     print(f"Exported BDF to {output_path}")
 

@@ -7,6 +7,7 @@ FONT_NAME := x10y12pxDenkiChipHangul
 SOURCE := src/$(FONT_NAME).glyphs
 FONTS_DIR := fonts
 BDF_SCRIPT := scripts/export_bdf.py
+EXPORT_CONFIG := glyphs-export.json
 
 OTF_FILE := $(FONTS_DIR)/$(FONT_NAME).otf
 TTF_FILE := $(FONTS_DIR)/$(FONT_NAME).ttf
@@ -24,9 +25,9 @@ setup:
 
 build: check
 	@mkdir -p "$(FONTS_DIR)"
-	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' \
+	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
 		--format cff --container standard --output "$(FONTS_DIR)" "$(SOURCE)"
-	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' \
+	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
 		--format tt --container standard,woff2 --output "$(FONTS_DIR)" "$(SOURCE)"
 	$(GLYPHS) run --app "$(GLYPHS_APP)" --plugins BDF \
 		"$(BDF_SCRIPT)" --input "$(SOURCE)" -- "$(BDF_FILE)"
