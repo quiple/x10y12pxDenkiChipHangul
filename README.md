@@ -47,10 +47,7 @@ make setup
 make
 ```
 
-Glyphs의 GUI를 열지 않고 `fonts/`에 OTF, TTF, TrueType 기반 WOFF2, BDF를
-출력합니다. 이 빌드는 [Glyphs 공식 CLI](https://pypi.org/project/glyphs-cli/)를
-사용합니다. OTF, TTF, WOFF2는 겹침 제거를 적용하고 자동 힌팅은 적용하지 않습니다.
-Glyphs 앱의 위치가 기본값과 다르면 다음과 같이 지정할 수 있습니다.
+`fonts/`에 OTF, TTF, TrueType 기반 WOFF2, BDF를 출력합니다. 이 빌드는 [Glyphs 공식 CLI](https://pypi.org/project/glyphs-cli/)를 사용합니다. OTF, TTF, WOFF2는 겹침 제거를 적용하고 자동 힌팅은 적용하지 않습니다. Glyphs 앱의 위치가 기본값과 다르면 다음과 같이 지정할 수 있습니다.
 
 ```sh
 make GLYPHS_APP="/path/to/Glyphs 3.app"
