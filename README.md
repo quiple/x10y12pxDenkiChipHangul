@@ -26,3 +26,33 @@ Adobe-KR-9 보충 0의 한글 음절 2,780자와 일본 한자 640자를 지원�
 ## 제작에 사용된 도구
 
 - [Glyphs 3](https://glyphsapp.com)
+
+## 폰트 빌드
+
+macOS에서 다음 항목을 한 번만 준비합니다.
+
+- Glyphs 3.5 이상과 유효한 라이선스
+- Glyphs 플러그인 관리자에서 설치한 `BDF` 플러그인
+- Python 3.10 이상
+
+저장소 루트에서 Glyphs 공식 CLI를 프로젝트 전용 환경에 한 번 설치합니다.
+
+```sh
+make setup
+```
+
+이후 폰트를 저장하고 다음 명령을 실행합니다.
+
+```sh
+make
+```
+
+Glyphs의 GUI를 열지 않고 `fonts/`에 OTF, TTF, TrueType 기반 WOFF2, BDF를
+출력합니다. 이 빌드는 [Glyphs 공식 CLI](https://pypi.org/project/glyphs-cli/)를
+사용합니다. Glyphs 앱의 위치가 기본값과 다르면 다음과 같이 지정할 수 있습니다.
+
+```sh
+make GLYPHS_APP="/path/to/Glyphs 3.app"
+```
+
+생성한 파일만 지우려면 `make clean`을 실행합니다.

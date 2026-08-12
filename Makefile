@@ -1,47 +1,49 @@
-# Variables
-JAR_URL = https://github.com/kreativekorp/bitsnpicas/releases/latest/download/BitsNPicas.jar
-TOOLS_DIR = tools
-FONTS_DIR = fonts
-JAR_FILE = $(TOOLS_DIR)/BitsNPicas.jar
-SRC_FILE = src/x10y12pxDenkiChipHangul.kbitx
+PYTHON ?= python3
+VENV ?= .venv
+GLYPHS ?= $(VENV)/bin/glyphs
+GLYPHS_APP ?= /Applications/Glyphs 3.app
 
-TTF_FILE = $(FONTS_DIR)/x10y12pxDenkiChipHangul.ttf
-BDF_FILE = $(FONTS_DIR)/x10y12pxDenkiChipHangul.bdf
-WOFF2_FILE = $(FONTS_DIR)/x10y12pxDenkiChipHangul.woff2
+FONT_NAME := x10y12pxDenkiChipHangul
+SOURCE := src/$(FONT_NAME).glyphs
+FONTS_DIR := fonts
+BDF_SCRIPT := scripts/export_bdf.py
 
-FONTTOOLS = python3 -m fontTools.ttLib.woff2
+OTF_FILE := $(FONTS_DIR)/$(FONT_NAME).otf
+TTF_FILE := $(FONTS_DIR)/$(FONT_NAME).ttf
+WOFF2_FILE := $(FONTS_DIR)/$(FONT_NAME).woff2
+BDF_FILE := $(FONTS_DIR)/$(FONT_NAME).bdf
+OUTPUTS := $(OTF_FILE) $(TTF_FILE) $(WOFF2_FILE) $(BDF_FILE)
 
-# Default target
-all: $(TTF_FILE) $(BDF_FILE) $(WOFF2_FILE)
+.PHONY: all setup build check clean
 
-# Ensure directories exist
-$(TOOLS_DIR):
-	mkdir -p $(TOOLS_DIR)
+all: build
 
-$(FONTS_DIR):
-	mkdir -p $(FONTS_DIR)
+setup:
+	$(PYTHON) -m venv "$(VENV)"
+	"$(VENV)/bin/python" -m pip install -r requirements-build.txt
 
-# Download BitsNPicas.jar
-$(JAR_FILE): | $(TOOLS_DIR)
-	curl -L -o $(JAR_FILE) $(JAR_URL)
+build: check
+	@mkdir -p "$(FONTS_DIR)"
+	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' \
+		--format cff --container standard --output "$(FONTS_DIR)" "$(SOURCE)"
+	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' \
+		--format tt --container standard,woff2 --output "$(FONTS_DIR)" "$(SOURCE)"
+	$(GLYPHS) run --app "$(GLYPHS_APP)" --plugins BDF \
+		"$(BDF_SCRIPT)" --input "$(SOURCE)" -- "$(BDF_FILE)"
+	@for file in $(OUTPUTS); do \
+		test -s "$$file" || { echo "Missing output: $$file" >&2; exit 1; }; \
+	done
+	@echo "Exported OTF, TTF, WOFF2, and BDF to $(FONTS_DIR)/"
 
-# Build TTF
-$(TTF_FILE): $(SRC_FILE) $(JAR_FILE) | $(FONTS_DIR)
-	rm -f $(TTF_FILE)
-	java -jar $(JAR_FILE) convertbitmap -f ttf -o $(TTF_FILE) $(SRC_FILE)
+check:
+	@command -v "$(GLYPHS)" >/dev/null 2>&1 || { \
+		echo "glyphs-cli is required: run 'make setup' first" >&2; \
+		exit 1; \
+	}
+	@test -d "$(GLYPHS_APP)" || { \
+		echo "Glyphs app not found: $(GLYPHS_APP)" >&2; \
+		exit 1; \
+	}
 
-# Build BDF
-$(BDF_FILE): $(SRC_FILE) $(JAR_FILE) | $(FONTS_DIR)
-	rm -f $(BDF_FILE)
-	java -jar $(JAR_FILE) convertbitmap -f bdf -o $(BDF_FILE) $(SRC_FILE)
-
-# Build WOFF2
-$(WOFF2_FILE): $(TTF_FILE) | $(FONTS_DIR)
-	rm -f $(WOFF2_FILE)
-	$(FONTTOOLS) compress -o $(WOFF2_FILE) $(TTF_FILE)
-
-# Clean target
 clean:
-	rm -f $(TTF_FILE) $(BDF_FILE) $(WOFF2_FILE)
-
-.PHONY: all clean
+	rm -f $(OUTPUTS)
