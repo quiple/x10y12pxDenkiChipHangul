@@ -29,7 +29,7 @@ Adobe-KR-9 보충 0의 한글 음절 2,780자와 일본 한자 640자를 지원�
 
 ## 폰트 빌드
 
-macOS에서 다음 항목을 한 번만 준비합니다.
+macOS에서 다음 항목을 준비합니다.
 
 - Glyphs 3.5 이상과 유효한 라이선스
 - [`quiple/BDFFileFormat`](https://github.com/quiple/BDFFileFormat) 저장소의 `BDF` 플러그인 (Glyphs 3에 설치)
