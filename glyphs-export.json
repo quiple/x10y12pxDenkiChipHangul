@@ -1,6 +1,6 @@
 {
-  settings: {
-    autohint: false,
-    removeOverlap: true,
-  },
+  "settings": {
+    "autohint": false,
+    "removeOverlap": true
+  }
 }
