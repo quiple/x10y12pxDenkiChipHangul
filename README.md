@@ -4,7 +4,7 @@
 
 <strong>x10y12pxDenkiChipHangul(전기칩 한글)</strong>은 [患者長ひっく](https://x.com/hicchicc) 님께서 제작한 12px 크기의 일본어 픽셀 폰트 '**[x8y12pxDenkiChip(でんきチップ)](https://github.com/hicchicc/x8y12pxDenkiChip)**'을 기반으로 만들어진 하는 한국어&middot;일본어 픽셀 폰트입니다.
 
-Adobe-KR-9 보충 0의 한글 음절 2,780자와 일본 한자 640자를 지원합니다.
+Adobe-KR-0 및 Adobe-KR-1의 한글 음절 4,358자와 일본 한자 640자를 지원합니다.
 
 ## 라이선스
 
