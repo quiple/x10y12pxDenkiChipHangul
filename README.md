@@ -60,13 +60,6 @@ Remove generated font files with:
 make clean
 ```
 
-## Credits
-
-- [hicc (患者長ひっく)](https://x.com/hicchicc) and the [x8y12pxDenkiChip project authors](https://github.com/hicchicc/x8y12pxDenkiChip) — original x8y12pxDenkiChip design
-- [Lee Minseo (quiple)](https://quiple.dev) (quiple@quiple.dev) — Korean extension, additional glyph design, font engineering, and project maintenance
-
-The official copyright authors and project contributors are also listed in [`AUTHORS.txt`](./AUTHORS.txt) and [`CONTRIBUTORS.txt`](./CONTRIBUTORS.txt).
-
 ## License
 
 Copyright 2026 Lee Minseo (`quiple@quiple.dev`).
@@ -74,3 +67,10 @@ Copyright 2026 Lee Minseo (`quiple@quiple.dev`).
 Copyright 2026 The x8y12pxDenkiChip Project Authors ([github.com/hicchicc/x8y12pxDenkiChip](https://github.com/hicchicc/x8y12pxDenkiChip)).
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1. The license is included in this repository as [`OFL.txt`](./OFL.txt) and is also available with a FAQ at [openfontlicense.org](https://openfontlicense.org/).
+
+## Credits
+
+- [hicc (患者長ひっく)](https://x.com/hicchicc) and the [x8y12pxDenkiChip project authors](https://github.com/hicchicc/x8y12pxDenkiChip) — original x8y12pxDenkiChip design
+- [Lee Minseo (quiple)](https://quiple.dev) (quiple@quiple.dev) — Korean extension, additional glyph design, font engineering, and project maintenance
+
+The official copyright authors and project contributors are also listed in [`AUTHORS.txt`](./AUTHORS.txt) and [`CONTRIBUTORS.txt`](./CONTRIBUTORS.txt).
