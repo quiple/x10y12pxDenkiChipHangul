@@ -1,6 +1,6 @@
 # x10y12pxDenkiChipHangul 「전기칩 한글」
 
-![DenkiChipHangul](./doc/x10y12pxDenkiChipHangul.png)
+![DenkiChipHangul](./documentation/x10y12pxDenkiChipHangul.png)
 
 [데모](https://blog.quiple.dev/font/denkichip-hangul)
 
@@ -50,7 +50,7 @@ make setup
 make
 ```
 
-`fonts/`에 OTF, TTF, TrueType 기반 WOFF2, BDF를 출력합니다. 이 빌드는 [Glyphs 공식 CLI](https://pypi.org/project/glyphs-cli/)와 [fontTools](https://github.com/fonttools/fonttools)를 사용합니다. OTF, TTF, WOFF2는 겹침 제거를 적용하고 자동 힌팅은 적용하지 않습니다.
+형식에 따라 `fonts/otf/`, `fonts/ttf/`, `fonts/webfonts/`, `fonts/bdf/`에 OTF, TTF, TrueType 기반 WOFF2, BDF를 출력합니다. 이 빌드는 [Glyphs 공식 CLI](https://pypi.org/project/glyphs-cli/)와 [fontTools](https://github.com/fonttools/fonttools)를 사용합니다. OTF, TTF, WOFF2는 겹침 제거를 적용하고 자동 힌팅은 적용하지 않습니다.
 
 생성된 TTF에는 BDF를 정수배로 확대한 12px, 24px, 36px, 48px, 60px의 1비트 `EBDT`/`EBLC` 비트맵 스트라이크가 들어갑니다.
 
@@ -61,3 +61,5 @@ make GLYPHS_APP="/path/to/Glyphs 3.app"
 ```
 
 생성한 파일만 지우려면 `make clean`을 실행합니다.
+
+Google Fonts의 upstream 저장소 규칙에 맞춘 단일 명령 빌드는 `./sources/build.sh`로도 실행할 수 있습니다.

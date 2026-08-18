@@ -1,0 +1,5 @@
+# This is the list of people who have contributed to this project.
+#
+# Names should be added as: Name <email address>
+
+Lee Minseo <quiple@quiple.dev>
