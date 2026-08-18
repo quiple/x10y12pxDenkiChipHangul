@@ -6,13 +6,6 @@ x10y12pxDenkiChipHangul is a 12-pixel Korean and Japanese pixel typeface. It ext
 
 Except for Hangul and the other newly added characters, the glyph shapes inherited from x8y12pxDenkiChip are preserved unchanged. See the [live demo](https://blog.quiple.dev/font/denkichip-hangul) for an interactive specimen.
 
-## Design and features
-
-- Drawn on a native 12-pixel grid.
-- Includes vertical-writing alternates for kana, punctuation, symbols, and combining kana marks where repositioning is required.
-- Uses targeted contextual alternates to improve spacing while preserving exact pixel placement.
-- Provides embedded monochrome bitmap strikes in the TTF for crisp rendering on compatible Windows systems.
-
 ## Language and character support
 
 The font includes Latin, Hangul, Hiragana, Katakana, punctuation, symbols, and a selection of CJK unified ideographs. Its Korean repertoire contains 4,358 Hangul syllables from Adobe-KR-0 and Adobe-KR-1, and it also includes 640 kanji used in Japanese text.
