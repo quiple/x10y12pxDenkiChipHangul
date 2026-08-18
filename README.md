@@ -33,12 +33,6 @@ Build all font formats from the repository root:
 make
 ```
 
-The Google Fonts-style single-command build entry point is also available:
-
-```sh
-./sources/build.sh
-```
-
 The build generates the following files:
 
 - `fonts/otf/x10y12pxDenkiChipHangul.otf`
@@ -47,18 +41,6 @@ The build generates the following files:
 - `fonts/bdf/x10y12pxDenkiChipHangul.bdf`
 
 Overlap removal is enabled and automatic hinting is disabled for OTF, TTF, and WOFF2 exports. After the outline TTF is generated, fontTools embeds integer-scaled 1-bit `EBDT`/`EBLC` bitmap strikes at 12, 24, 36, 48, and 60 pixels per em.
-
-If Glyphs is installed somewhere other than `/Applications/Glyphs 3.app`, specify its location when building:
-
-```sh
-make GLYPHS_APP="/path/to/Glyphs 3.app"
-```
-
-Remove generated font files with:
-
-```sh
-make clean
-```
 
 ## License
 
