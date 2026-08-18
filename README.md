@@ -9,7 +9,6 @@ Except for Hangul and the other newly added characters, the glyph shapes inherit
 ## Design and features
 
 - Drawn on a native 12-pixel grid.
-- Designed for mixed Korean and Japanese text.
 - Includes vertical-writing alternates for kana, punctuation, symbols, and combining kana marks where repositioning is required.
 - Uses targeted contextual alternates to improve spacing while preserving exact pixel placement.
 - Provides embedded monochrome bitmap strikes in the TTF for crisp rendering on compatible Windows systems.
