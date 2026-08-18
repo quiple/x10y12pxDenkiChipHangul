@@ -33,13 +33,6 @@ Build all font formats from the repository root:
 make
 ```
 
-The build generates the following files:
-
-- `fonts/otf/x10y12pxDenkiChipHangul.otf`
-- `fonts/ttf/x10y12pxDenkiChipHangul.ttf`
-- `fonts/webfonts/x10y12pxDenkiChipHangul.woff2`
-- `fonts/bdf/x10y12pxDenkiChipHangul.bdf`
-
 Overlap removal is enabled and automatic hinting is disabled for OTF, TTF, and WOFF2 exports. After the outline TTF is generated, fontTools embeds integer-scaled 1-bit `EBDT`/`EBLC` bitmap strikes at 12, 24, 36, 48, and 60 pixels per em.
 
 ## License
