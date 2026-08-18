@@ -19,7 +19,7 @@ The font includes Latin, Hangul, Hiragana, Katakana, punctuation, symbols, and a
 
 ## Building
 
-The build currently requires macOS because it uses Glyphs 3 and the Glyphs command-line interface.
+The build currently requires macOS because it uses Glyphs 3 and the Glyphs command-line tool.
 
 Install the following prerequisites:
 
