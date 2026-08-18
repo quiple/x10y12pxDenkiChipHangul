@@ -60,7 +60,7 @@ Remove generated font files with:
 make clean
 ```
 
-## Acknowledgments and credits
+## Credits
 
 - [hicc (患者長ひっく)](https://x.com/hicchicc) and the [x8y12pxDenkiChip project authors](https://github.com/hicchicc/x8y12pxDenkiChip) — original x8y12pxDenkiChip design
 - [Lee Minseo (quiple)](https://quiple.dev) (quiple@quiple.dev) — Korean extension, additional glyph design, font engineering, and project maintenance
