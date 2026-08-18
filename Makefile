@@ -7,6 +7,8 @@ FONT_NAME := x10y12pxDenkiChipHangul
 SOURCE := src/$(FONT_NAME).glyphs
 FONTS_DIR := fonts
 BDF_SCRIPT := scripts/export_bdf.py
+BITMAP_SCRIPT := scripts/embed_bitmap_strikes.py
+BITMAP_SIZES := 12,24,36,48,60
 EXPORT_CONFIG := glyphs-export.json
 
 OTF_FILE := $(FONTS_DIR)/$(FONT_NAME).otf
@@ -31,6 +33,8 @@ build: check
 		--format tt --container standard,woff2 --output "$(FONTS_DIR)" "$(SOURCE)"
 	$(GLYPHS) run --app "$(GLYPHS_APP)" --plugins BDF \
 		"$(BDF_SCRIPT)" --input "$(SOURCE)" -- "$(BDF_FILE)"
+	"$(VENV)/bin/python" "$(BITMAP_SCRIPT)" --font "$(TTF_FILE)" \
+		--bdf "$(BDF_FILE)" --sizes "$(BITMAP_SIZES)"
 	@for file in $(OUTPUTS); do \
 		test -s "$$file" || { echo "Missing output: $$file" >&2; exit 1; }; \
 	done
@@ -39,6 +43,10 @@ build: check
 check:
 	@command -v "$(GLYPHS)" >/dev/null 2>&1 || { \
 		echo "glyphs-cli is required: run 'make setup' first" >&2; \
+		exit 1; \
+	}
+	@"$(VENV)/bin/python" -c "import fontTools" >/dev/null 2>&1 || { \
+		echo "fontTools is required: run 'make setup' first" >&2; \
 		exit 1; \
 	}
 	@test -d "$(GLYPHS_APP)" || { \
