@@ -1,0 +1,7 @@
+# This is the official list of project authors for copyright purposes.
+# This file is distinct from the CONTRIBUTORS.txt file.
+#
+# Names should be added as: Name or Organization <contact>
+
+Lee Minseo <quiple@quiple.dev>
+The x8y12pxDenkiChip Project Authors <https://github.com/hicchicc/x8y12pxDenkiChip>

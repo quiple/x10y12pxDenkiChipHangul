@@ -1,2 +1,0 @@
-glyphs-cli==0.6.1
-fonttools==4.63.0

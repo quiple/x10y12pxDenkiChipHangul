@@ -1,63 +1,51 @@
-# x10y12pxDenkiChipHangul 「전기칩 한글」
+# x10y12pxDenkiChipHangul (전기칩 한글)
 
-![DenkiChipHangul](./doc/x10y12pxDenkiChipHangul.png)
+![A specimen of x10y12pxDenkiChipHangul](./documentation/x10y12pxDenkiChipHangul.png)
 
-[데모](https://blog.quiple.dev/font/denkichip-hangul)
+x10y12pxDenkiChipHangul is a 12-pixel Korean and Japanese pixel typeface. It extends [x8y12pxDenkiChip (でんきチップ)](https://github.com/hicchicc/x8y12pxDenkiChip), the Japanese pixel typeface designed by [hicc (患者長ひっく)](https://x.com/hicchicc), with Hangul and additional characters for Korean text. The project is intended for games, user interfaces, web pages, and other settings that benefit from crisp, compact pixel lettering.
 
-<strong>x10y12pxDenkiChipHangul(전기칩 한글)</strong>은 [患者長ひっく](https://x.com/hicchicc) 님께서 제작한 12px 크기의 일본어 픽셀 폰트 '**[x8y12pxDenkiChip(でんきチップ)](https://github.com/hicchicc/x8y12pxDenkiChip)**'을 기반으로 만들어진 하는 한국어&middot;일본어 픽셀 폰트입니다.
+Except for Hangul and the other newly added characters, the glyph shapes inherited from x8y12pxDenkiChip are preserved unchanged. See the [live demo](https://blog.quiple.dev/font/denkichip-hangul) for an interactive specimen.
 
-Adobe-KR-0 및 Adobe-KR-1의 한글 음절 4,358자와 일본 한자 640자를 지원합니다.
+## Language and character support
 
-한글 및 추가 문자를 제외한 원본에 존재한 문자의 모양은 x8y12pxDenkiChip과 완전히 동일합니다.
+The font includes Latin, Hangul, Hiragana, Katakana, punctuation, symbols, and a selection of CJK unified ideographs. Its Korean repertoire contains 4,358 Hangul syllables from Adobe-KR-0 and Adobe-KR-1, and it also includes 640 kanji used in Japanese text.
 
-## 라이선스
+## Building
 
-| 범주 | 설명 |
-| - | - |
-| 상업적 이용 | **✅ 가능**<br />폰트를 상업적으로 이용할 수 있습니다. 표현하는 내용이나 매체 등도 상관하지 않습니다. |
-| 임베드 | **✅ 가능**<br />폰트 파일을 게임&middot;소프트웨어 등에 포함시키거나 웹 폰트로 이용할 수 있습니다. |
-| 출처 표기 | **✅ 필수 아님**<br />폰트의 출처 및 저작자명을 표시하지 않아도 됩니다. |
-| 수정 및 재배포 | **✅ 가능**<br />폰트를 수정하거나 재배포할 수 있습니다. 수정하여 재배포할 경우 OFL-1.1을 채택해야 합니다. |
-| 단독 판매 | **❌ 금지**<br />폰트 파일만을 유료 판매하는 경우. 게임&middot;소프트웨어 등에 포함시켜 판매하는 것은 가능합니다. |
-| 이용으로 인한 피해 | **❌ 책임 안 짐**<br />폰트의 이용으로 인한 피해나 손해가 생기더라도 일절 책임지지 않습니다. |
+The build currently requires macOS because it uses Glyphs 3 and the Glyphs command-line tool.
 
-&copy; 2026 Lee Minseo (<quiple@quiple.dev>)
+Install the following prerequisites:
 
-&copy; 2026 The x8y12pxDenkiChip Project Authors (<https://github.com/hicchicc/x8y12pxDenkiChip>)
+- Glyphs 3.5 or later with a valid license
+- The `BDF` plug-in from the modified [`quiple/BDFFileFormat`](https://github.com/quiple/BDFFileFormat) repository, installed in Glyphs 3
+- Python 3.10 or later
+- Make
 
-전기칩 한글은 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다.
-
-## 폰트 빌드
-
-> [!WARNING]
-> Glyphs 4에서의 작동은 확인되지 않았습니다.
-
-macOS에서 다음 항목을 준비합니다.
-
-- Glyphs 3.5 이상과 유효한 라이선스
-- [`quiple/BDFFileFormat`](https://github.com/quiple/BDFFileFormat) 저장소의 `BDF` 플러그인 (Glyphs 3에 설치)
-- Python 3.10 이상
-
-저장소 루트에서 Glyphs 공식 CLI를 프로젝트 전용 환경에 한 번 설치합니다.
+Create the project-specific Python environment and install the pinned dependencies:
 
 ```sh
 make setup
 ```
 
-이후 폰트를 저장하고 다음 명령을 실행합니다.
+Build all font formats from the repository root:
 
 ```sh
 make
 ```
 
-`fonts/`에 OTF, TTF, TrueType 기반 WOFF2, BDF를 출력합니다. 이 빌드는 [Glyphs 공식 CLI](https://pypi.org/project/glyphs-cli/)와 [fontTools](https://github.com/fonttools/fonttools)를 사용합니다. OTF, TTF, WOFF2는 겹침 제거를 적용하고 자동 힌팅은 적용하지 않습니다.
+Overlap removal is enabled and automatic hinting is disabled for OTF, TTF, and WOFF2 exports. After the outline TTF is generated, fontTools embeds integer-scaled 1-bit `EBDT`/`EBLC` bitmap strikes at 12, 24, 36, 48, and 60 pixels per em.
 
-생성된 TTF에는 BDF를 정수배로 확대한 12px, 24px, 36px, 48px, 60px의 1비트 `EBDT`/`EBLC` 비트맵 스트라이크가 들어갑니다.
+## License
 
-Glyphs 앱의 위치가 기본값과 다르면 다음과 같이 지정할 수 있습니다.
+Copyright 2026 Lee Minseo (`quiple@quiple.dev`).
 
-```sh
-make GLYPHS_APP="/path/to/Glyphs 3.app"
-```
+Copyright 2026 The x8y12pxDenkiChip Project Authors ([github.com/hicchicc/x8y12pxDenkiChip](https://github.com/hicchicc/x8y12pxDenkiChip)).
 
-생성한 파일만 지우려면 `make clean`을 실행합니다.
+This Font Software is licensed under the SIL Open Font License, Version 1.1. The license is included in this repository as [`OFL.txt`](./OFL.txt) and is also available with a FAQ at [openfontlicense.org](https://openfontlicense.org/).
+
+## Credits
+
+- [hicc (患者長ひっく)](https://x.com/hicchicc) and the [x8y12pxDenkiChip project authors](https://github.com/hicchicc/x8y12pxDenkiChip) — original x8y12pxDenkiChip design
+- [Lee Minseo (quiple)](https://quiple.dev) (quiple@quiple.dev) — Korean extension, additional glyph design, font engineering, and project maintenance
+
+The official copyright authors and project contributors are also listed in [`AUTHORS.txt`](./AUTHORS.txt) and [`CONTRIBUTORS.txt`](./CONTRIBUTORS.txt).

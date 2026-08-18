@@ -1,3 +1,5 @@
 .DS_Store
+*(Autosave)*
 tools/
 .venv/
+__pycache__/
