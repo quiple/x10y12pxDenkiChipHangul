@@ -12,7 +12,7 @@ The font includes Latin, Hangul, Hiragana, Katakana, punctuation, symbols, and a
 
 ## Building
 
-The build currently requires macOS because it uses Glyphs 3 and the Glyphs command-line tool.
+The build currently requires macOS because it uses [Glyphs 3](https://glyphsapp.com/) and the [Glyphs command-line tool](https://pypi.org/project/glyphs-cli/).
 
 Install the following prerequisites:
 
