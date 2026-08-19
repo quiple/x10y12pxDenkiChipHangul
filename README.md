@@ -2,7 +2,7 @@
 
 ![A specimen of x10y12pxDenkiChipHangul](./documentation/x10y12pxDenkiChipHangul.png)
 
-x10y12pxDenkiChipHangul is a 12-pixel Korean and Japanese pixel typeface. It extends [x8y12pxDenkiChip (でんきチップ)](https://github.com/hicchicc/x8y12pxDenkiChip), the Japanese pixel typeface designed by [hicc (患者長ひっく)](https://x.com/hicchicc), with Hangul and additional characters for Korean text. The project is intended for games, user interfaces, web pages, and other settings that benefit from crisp, compact pixel lettering.
+x10y12pxDenkiChipHangul is a 12-pixel Korean and Japanese pixel font. It extends [x8y12pxDenkiChip (でんきチップ)](https://github.com/hicchicc/x8y12pxDenkiChip), the Japanese pixel font designed by [hicc (患者長ひっく)](https://x.com/hicchicc), with Hangul and additional characters for Korean text. The project is intended for games, user interfaces, web pages, and other settings that benefit from crisp, compact pixel lettering.
 
 Except for Hangul and the other newly added characters, the glyph shapes inherited from x8y12pxDenkiChip are preserved unchanged. See the [live demo](https://blog.quiple.dev/font/denkichip-hangul) for an interactive specimen.
 
