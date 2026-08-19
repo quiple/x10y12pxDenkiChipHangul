@@ -1,3 +1,5 @@
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/quiple/x10y12pxDenkiChipHangul/total)
+
 # x10y12pxDenkiChipHangul (전기칩 한글)
 
 ![A specimen of x10y12pxDenkiChipHangul](./documentation/x10y12pxDenkiChipHangul.png)
