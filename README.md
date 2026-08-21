@@ -35,7 +35,7 @@ Build all font formats from the repository root:
 make
 ```
 
-Overlap removal is enabled and automatic hinting is disabled for OTF, TTF, WOFF2, and BDF exports. After the outline TTF is generated, fontTools embeds integer-scaled 1-bit `EBDT`/`EBLC` bitmap strikes at 12, 24, 36, 48, and 60 pixels per em.
+After the outline TTF is generated, fontTools embeds integer-scaled 1-bit `EBDT`/`EBLC` bitmap strikes at 12, 24, 36, 48, and 60 pixels per em.
 
 ## License
 
