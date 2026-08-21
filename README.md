@@ -35,7 +35,7 @@ Build all font formats from the repository root:
 make
 ```
 
-The build outputs four font formats: OTF, TTF, WOFF2, and BDF.
+The build outputs OTF, TTF, WOFF2, and BDF font files.
 
 After the outline TTF is generated, fontTools embeds integer-scaled 1-bit `EBDT`/`EBLC` bitmap strikes at 12, 24, 36, 48, and 60 pixels per em.
 
