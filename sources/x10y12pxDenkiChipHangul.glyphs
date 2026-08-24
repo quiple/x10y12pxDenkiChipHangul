@@ -1560255,7 +1560255,7 @@ value = "quiple; hicc";
 },
 {
 key = designerURL;
-value = "https://x.com/hicchicc; https://quiple.dev";
+value = "https://quiple.dev; https://x.com/hicchicc";
 },
 {
 key = licenses;
@@ -1560281,7 +1560281,7 @@ value = "quiple; x0y0pxFreeFont";
 },
 {
 key = manufacturerURL;
-value = "https://hicchicc.github.io/00ff/; https://quiple.dev";
+value = "https://quiple.dev; https://hicchicc.github.io/00ff/";
 },
 {
 key = postscriptFontName;
