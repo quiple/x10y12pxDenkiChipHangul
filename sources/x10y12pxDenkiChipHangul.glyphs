@@ -1,5 +1,5 @@
 {
-.appVersion = "3531";
+.appVersion = "4108";
 .formatVersion = 3;
 customParameters = (
 {
@@ -1540895,15 +1540895,17 @@ unicode = 8451;
 },
 {
 glyphname = fahrenheit;
-lastChange = "2026-07-22 18:53:33 +0000";
+lastChange = "2026-11-02 01:22:15 +0000";
 layers = (
 {
 layerId = m01;
 shapes = (
 {
+alignment = -1;
 ref = degree;
 },
 {
+alignment = -1;
 pos = (200,0);
 ref = F;
 }
@@ -2386897,5 +2386899,5 @@ m01 = {
 };
 };
 versionMajor = 1;
-versionMinor = 213;
+versionMinor = 300;
 }
