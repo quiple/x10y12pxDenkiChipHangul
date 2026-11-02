@@ -10,7 +10,7 @@ Except for Hangul and the other newly added characters, the glyph shapes inherit
 
 ## Language and character support
 
-The font includes Latin, Hangul, Hiragana, Katakana, punctuation, symbols, and a selection of CJK unified ideographs. Its Korean repertoire contains 4,358 Hangul syllables from Adobe-KR-0 and Adobe-KR-1, and it also includes 640 kanji used in Japanese text.
+The font includes Latin, Hangul, Hiragana, Katakana, punctuation, symbols, and a selection of CJK unified ideographs. Its Korean repertoire contains 4,358 Hangul syllables from Adobe-KR-0 and Adobe-KR-1. It also supports all 2,965 JIS Level 1 kanji used in Japanese text.
 
 ## Building
 
