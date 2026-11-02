@@ -2,6 +2,7 @@ PYTHON ?= python3
 VENV ?= .venv
 GLYPHS ?= $(VENV)/bin/glyphs
 GLYPHS_APP ?= /Applications/Glyphs 4.app
+GLYPHS_PYTHON ?= $(HOME)/Library/Application Support/Glyphs 4/Repositories/Python/Python.framework/Versions/Current/Python
 
 FONT_NAME := x10y12pxDenkiChipHangul
 SOURCE_DIR := sources
@@ -38,7 +39,7 @@ build: check
 		--format tt --container standard --output "$(TTF_DIR)" "$(SOURCE)"
 	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
 		--format tt --container woff2 --output "$(WEBFONTS_DIR)" "$(SOURCE)"
-	$(GLYPHS) run --app "$(GLYPHS_APP)" --plugins BDF \
+	$(GLYPHS) run --app "$(GLYPHS_APP)" --python "$(GLYPHS_PYTHON)" --plugins BDF \
 		"$(BDF_SCRIPT)" --input "$(SOURCE)" -- "$(BDF_FILE)"
 	"$(VENV)/bin/python" "$(BITMAP_SCRIPT)" --font "$(TTF_FILE)" \
 		--bdf "$(BDF_FILE)" --sizes "$(BITMAP_SIZES)"
@@ -58,6 +59,11 @@ check:
 	}
 	@test -d "$(GLYPHS_APP)" || { \
 		echo "Glyphs app not found: $(GLYPHS_APP)" >&2; \
+		exit 1; \
+	}
+	@test -f "$(GLYPHS_PYTHON)" || { \
+		echo "Glyphs Python framework not found: $(GLYPHS_PYTHON)" >&2; \
+		echo "Install Python in Glyphs 4 or set GLYPHS_PYTHON to the framework's Python file." >&2; \
 		exit 1; \
 	}
 
