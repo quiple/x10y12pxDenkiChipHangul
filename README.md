@@ -43,6 +43,8 @@ make GLYPHS_PYTHON="/path/to/Python.framework/Versions/3.14/Python"
 
 The build outputs OTF, TTF, WOFF2, and BDF font files.
 
+After Glyphs exports the OTF, fontTools restores its CFF font matrix to match the units per em. This preserves the intended pixel size in Photoshop.
+
 After the outline TTF is generated, fontTools embeds integer-scaled 1-bit `EBDT`/`EBLC` bitmap strikes at 12, 24, 36, 48, and 60 pixels per em.
 
 ## License

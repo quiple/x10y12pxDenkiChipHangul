@@ -14,6 +14,7 @@ WEBFONTS_DIR := $(FONTS_DIR)/webfonts
 BDF_DIR := $(FONTS_DIR)/bdf
 BDF_SCRIPT := $(SOURCE_DIR)/export_bdf.py
 BITMAP_SCRIPT := $(SOURCE_DIR)/embed_bitmap_strikes.py
+CFF_MATRIX_SCRIPT := $(SOURCE_DIR)/fix_cff_font_matrix.py
 BITMAP_SIZES := 12,24,36,48,60
 EXPORT_CONFIG := $(SOURCE_DIR)/glyphs-export.json
 
@@ -35,6 +36,7 @@ build: check
 	@mkdir -p "$(OTF_DIR)" "$(TTF_DIR)" "$(WEBFONTS_DIR)" "$(BDF_DIR)"
 	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
 		--format cff --container standard --output "$(OTF_DIR)" "$(SOURCE)"
+	"$(VENV)/bin/python" "$(CFF_MATRIX_SCRIPT)" "$(OTF_FILE)"
 	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
 		--format tt --container standard --output "$(TTF_DIR)" "$(SOURCE)"
 	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
