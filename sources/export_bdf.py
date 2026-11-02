@@ -17,7 +17,7 @@ def main():
     plugin_class = NSClassFromString("BDFFileFormat")
     if plugin_class is None:
         raise RuntimeError(
-            "BDF plug-in not found; install BDF.glyphsFileFormat in Glyphs 3"
+            "BDF plug-in not found; install BDF.glyphsFileFormat in Glyphs 4"
         )
 
     output_path = os.path.abspath(sys.argv[1])

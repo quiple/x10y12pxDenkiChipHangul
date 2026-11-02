@@ -1,7 +1,7 @@
 PYTHON ?= python3
 VENV ?= .venv
 GLYPHS ?= $(VENV)/bin/glyphs
-GLYPHS_APP ?= /Applications/Glyphs 3.app
+GLYPHS_APP ?= /Applications/Glyphs 4.app
 
 FONT_NAME := x10y12pxDenkiChipHangul
 SOURCE_DIR := sources
