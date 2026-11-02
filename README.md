@@ -18,7 +18,7 @@ The build currently requires macOS because it uses [Glyphs 4](https://glyphsapp.
 
 Install the following prerequisites:
 
-- Glyphs 4 or later with a valid license
+- Glyphs 4 or later with a valid license and its Python framework installed via the Glyphs Plugin Manager
 - The `BDF` plug-in from the modified [`quiple/BDFFileFormat`](https://github.com/quiple/BDFFileFormat) repository, installed in Glyphs 4
 - Python 3.10 or later
 - Make
@@ -33,6 +33,12 @@ Build all font formats from the repository root:
 
 ```sh
 make
+```
+
+The build uses the Python framework installed by Glyphs 4 for the BDF export. If your Glyphs Python framework is installed elsewhere, pass the path to its `Python` binary:
+
+```sh
+make GLYPHS_PYTHON="/path/to/Python.framework/Versions/3.14/Python"
 ```
 
 The build outputs OTF, TTF, WOFF2, and BDF font files.
