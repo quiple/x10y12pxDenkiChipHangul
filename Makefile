@@ -34,14 +34,14 @@ setup:
 
 build: check
 	@mkdir -p "$(OTF_DIR)" "$(TTF_DIR)" "$(WEBFONTS_DIR)" "$(BDF_DIR)"
-	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
+	PYTHONDONTWRITEBYTECODE=1 $(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
 		--format cff --container standard --output "$(OTF_DIR)" "$(SOURCE)"
 	"$(VENV)/bin/python" "$(CFF_MATRIX_SCRIPT)" "$(OTF_FILE)"
-	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
+	PYTHONDONTWRITEBYTECODE=1 $(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
 		--format tt --container standard --output "$(TTF_DIR)" "$(SOURCE)"
-	$(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
+	PYTHONDONTWRITEBYTECODE=1 $(GLYPHS) export --app "$(GLYPHS_APP)" --plugins '' --config "$(EXPORT_CONFIG)" \
 		--format tt --container woff2 --output "$(WEBFONTS_DIR)" "$(SOURCE)"
-	$(GLYPHS) run --app "$(GLYPHS_APP)" --python "$(GLYPHS_PYTHON)" --plugins BDF \
+	PYTHONDONTWRITEBYTECODE=1 $(GLYPHS) run --app "$(GLYPHS_APP)" --python "$(GLYPHS_PYTHON)" --plugins BDF \
 		"$(BDF_SCRIPT)" --input "$(SOURCE)" -- "$(BDF_FILE)"
 	"$(VENV)/bin/python" "$(BITMAP_SCRIPT)" --font "$(TTF_FILE)" \
 		--bdf "$(BDF_FILE)" --sizes "$(BITMAP_SIZES)"
